@@ -9,6 +9,7 @@ public class BulletController : MonoBehaviour
     public Boundary boundary;
 
     //TODO: create a reference to the BulletPoolManager
+    public BulletPoolManager*;
 
     void Start()
     {
@@ -34,7 +35,13 @@ public class BulletController : MonoBehaviour
         {
             //TODO: This code needs to change to use the BulletPoolManager's
             //TODO: ResetBullet function which will return the bullet to the pool
-            Destroy(this.gameObject);
+
+            //remove bullet, then add it back into the queue
+            //dequeue returns reference to a gameobject
+            //Destroy(this.gameObject); 
+            
+            //You shouldn't destroy the bullet, you should reset the position of the bullet
+            //ResetBullet(Bullet);
         }
     }
 }
